@@ -10,11 +10,11 @@ int main(int argc, const char *argv[]) {
 
     // index of constant in the constant array (aka ValueArray)
     int constant = addConstant(&chunk, 1.2);
-    writeChunk(&chunk, OP_CONSTANT);
+    writeChunk(&chunk, OP_CONSTANT, 123);
     // write the index of the constant
-    writeChunk(&chunk, constant);
-
-    writeChunk(&chunk, OP_RETURN);
+    writeChunk(&chunk, constant, 123);
+    writeChunk(&chunk, OP_RETURN, 123);
+    
     disassembleChunk(&chunk, "test chunk");
 
     freeChunk(&chunk);
