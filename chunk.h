@@ -2,6 +2,7 @@
 #define clox_chunk_h
 
 #include "common.h"
+#include "value.h"
 
 // instruction for vm
 typedef enum {
@@ -13,6 +14,7 @@ typedef struct {
     int count;
     int capacity;
     uint8_t *code;
+    ValueArray constants;
 } Chunk;
 
 // initalize a chunk
@@ -21,5 +23,7 @@ void initChunk(Chunk *chunk);
 void freeChunk(Chunk *chunk);
 // add a byte to chunk. Grow chunk if size is too small
 void writeChunk(Chunk* chunk, uint8_t byte);
+
+int addConstant(Chunk *chunk, Value value);
 
 #endif
