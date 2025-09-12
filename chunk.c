@@ -2,7 +2,7 @@
 #include "chunk.h"
 #include "memory.h"
 
-// initialize the chunk array
+
 void initChunk(Chunk *chunk) {
     chunk->count = 0;
     chunk->capacity = 0;

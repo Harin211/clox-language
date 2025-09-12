@@ -15,8 +15,11 @@ typedef struct {
     uint8_t *code;
 } Chunk;
 
+// initalize a chunk
 void initChunk(Chunk *chunk);
+// free the memory of the chunk
 void freeChunk(Chunk *chunk);
+// add a byte to chunk. Grow chunk if size is too small
 void writeChunk(Chunk* chunk, uint8_t byte);
 
 #endif
