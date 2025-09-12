@@ -6,6 +6,7 @@
 
 // instruction for vm
 typedef enum {
+    OP_CONSTANT,
     OP_RETURN,
 } OpCode;
 
@@ -24,6 +25,7 @@ void freeChunk(Chunk *chunk);
 // add a byte to chunk. Grow chunk if size is too small
 void writeChunk(Chunk* chunk, uint8_t byte);
 
+// adds constant to ValueArray and returns the current index of the chunk
 int addConstant(Chunk *chunk, Value value);
 
 #endif
