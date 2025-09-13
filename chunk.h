@@ -7,6 +7,7 @@
 // instruction for vm
 typedef enum {
     OP_CONSTANT,
+    OP_NEGATE,
     OP_RETURN,
 } OpCode;
 
